@@ -1,0 +1,15 @@
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.csproj.AssemblyReference.cache
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.AssemblyInfoInputs.cache
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.AssemblyInfo.cs
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.csproj.CoreCompileInputs.cache
+D:\projects\Organization\Organization\Organization\bin\Debug\net6.0\Organization.exe
+D:\projects\Organization\Organization\Organization\bin\Debug\net6.0\Organization.deps.json
+D:\projects\Organization\Organization\Organization\bin\Debug\net6.0\Organization.runtimeconfig.json
+D:\projects\Organization\Organization\Organization\bin\Debug\net6.0\Organization.dll
+D:\projects\Organization\Organization\Organization\bin\Debug\net6.0\Organization.pdb
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.dll
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\refint\Organization.dll
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.pdb
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\Organization.genruntimeconfig.cache
+D:\projects\Organization\Organization\Organization\obj\Debug\net6.0\ref\Organization.dll

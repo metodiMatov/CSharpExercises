@@ -6,17 +6,44 @@ using System.Threading.Tasks;
 
 namespace Organization
 {
+    
+    public record EmploymentRecord
+    {
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string? CompanyName { get; set; }
+        public string? Position { get; set; }
+    }
+
     abstract class Person
     {
-        protected internal string? FirstName { get; set; }
-        protected internal string? LastName { get; set; }
-        protected internal int Age { get; set; }
-        protected internal string? Country { get; set; }
-        protected internal string? City { get; set; }
-        protected internal string? Address { get; set; }
-        protected internal int PersonalId { get; set; }
-        protected internal string? Profession { get; set; }
-
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public int Age { get; set; }
+        public string? Country { get; set; }
+        public string? City { get; set; }
+        public string? Address { get; set; }
+        public int PersonalId { get; set; }
+        public string? Profession { get; set; }
+        public List<EmploymentRecord>? EmploymentRecords { get; set; }
         public abstract void PresentYourself();
+        public void GetTotalWorkExperience()
+        {
+            if (EmploymentRecords == null || EmploymentRecords.Count == 0)
+            {
+                Console.WriteLine("The Employee doesn't have work experience!");
+                return;
+            }
+
+            double totalExperiance = 0;
+            foreach (var employmentRecord in EmploymentRecords)
+            {
+                TimeSpan interval = employmentRecord.StartDate - employmentRecord.EndDate;
+                totalExperiance += interval.TotalMilliseconds;
+            }
+            var years = Math.Floor(totalExperiance / 12);
+            var months = Math.Floor((totalExperiance / 12 - Math.Floor(totalExperiance / 12)) * 12);
+            Console.WriteLine("The Employee total experience is {0} years and {1}", years, months);
+        }
     }
 }

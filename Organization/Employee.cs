@@ -8,7 +8,7 @@ namespace Organization
 {
     internal class Employee : Person
     {
-        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, float salary, float hourlyRate, string teamName)
+        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, float salary, float hourlyRate, string teamName ,List<EmploymentRecord> employmentRecords)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -21,6 +21,7 @@ namespace Organization
             Salary = salary;
             HourlyRate = hourlyRate;
             TeamName = teamName;
+            EmploymentRecords = employmentRecords;
         }
         protected internal float? Salary { get; set; }
         protected internal float? HourlyRate { get; set; }

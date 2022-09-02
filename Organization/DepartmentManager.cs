@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Organization
 {
-    internal class Manager : Person
+    internal class DepartmentManager : Person
     {
-        public Manager(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, float salary, float hourlyRate, string teamName, List<EmploymentRecord> employmentRecords)
+        public DepartmentManager(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, float salary, float hourlyRate, string teamName, List<EmploymentRecord> employmentRecords)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -26,6 +26,8 @@ namespace Organization
         public float? Salary { get; set; }
         public float? HourlyRate { get; set; }
         public string? TeamName { get; set; }
+
+        public Approval? EmploeeApproval { get; set; }
 
         public override void PresentYourself()
         {

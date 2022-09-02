@@ -9,6 +9,17 @@ namespace Organization
     
     public record EmploymentRecord
     {
+        private DateTime dateTime1;
+        private DateTime dateTime2;
+
+        public EmploymentRecord(DateTime dateTime1, DateTime dateTime2, string? companyName, string? position)
+        {
+            this.dateTime1 = dateTime1;
+            this.dateTime2 = dateTime2;
+            CompanyName = companyName;
+            Position = position;
+        }
+
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string? CompanyName { get; set; }

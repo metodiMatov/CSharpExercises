@@ -55,8 +55,56 @@ namespace Organization
                 Console.WriteLine("Team: ");
                 string team = Console.ReadLine();
 
-                _employees.Add(new Employee(firstName, lastName, age, country, city, address,id, profession, salary, hourlyRate, team));
-                Console.WriteLine("Add more employees?");
+                var employeeRecords = new List<EmploymentRecord>();
+                var employeeRecordIndex = 0;
+
+                while (true)
+                {
+                    if (employeeRecordIndex == 0)
+                    {
+                        Console.WriteLine("Create Employment record");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Create more Employment records for this Employee?(y/n)");
+                        string isCreatingMoreRecords = Console.ReadLine().ToLower();
+                        if (isCreatingMoreRecords == "yes" || isCreatingMoreRecords == "y")
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                    Console.WriteLine("Job starting day: ");
+                    int startDay = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Job starting month: ");
+                    int startMonth = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Job starting year: ");
+                    int startYear = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Job end starting day: ");
+                    int endDay = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Job end starting month: ");
+                    int endMonth = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Jobend starting year: ");
+                    int endYear = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Company Name: ");
+                    string companyName = Console.ReadLine();
+
+                    Console.WriteLine("latest position: ");
+                    string position = Console.ReadLine();
+                    var employeeRecord = new EmploymentRecord(new DateTime(startDay, startMonth, startYear), new DateTime(endDay, endMonth, endYear), companyName, position);
+                    employeeRecords.Add(employeeRecord);
+                    employeeRecordIndex++;
+                }
+
+                _employees.Add(new Employee(firstName, lastName, age, country, city, address,id, profession, salary, hourlyRate, team, employeeRecords));
+
+                Console.WriteLine("Add more employees?(y/n)");
                 string answer = Console.ReadLine().ToLower();
                 if (answer == "yes" || answer == "y")
                 {

@@ -8,8 +8,14 @@ namespace Organization
 {
     internal class Department : Team
     {
-        //public Manager Manager { get; set; }
+        public Department(string departmentName, DepartmentManager manager)
+        {
+            DepartmentName = departmentName;
+            Manager = manager;
+        }
 
-        protected List<Team> TeamList { get; set; }
+        public string? DepartmentName { get; set }
+        public DepartmentManager? Manager { get; set; }
+
     }
 }

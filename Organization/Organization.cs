@@ -1,23 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Organization
 {
-    internal class OrganizationClass
+    internal class Organization
     {
-        public List<Employee>? _employees = new List<Employee>(); 
-        public OrganizationClass(string organizationName, string organizationDescription, string OrganizationCEO)
-        {
+        public List<Employee>? _employees = new List<Employee>();
+        private string v1;
+        private string v2;
+        private string v3;
+        private ChiefExecutive chiefExecutive;
+        private Department department1;
+        private Department department2;
 
+        public Organization(string organizationName, string organizationDescription, ChiefExecutive organizationChiefExecutive, Department developmentDepartment,Department HumanResourcesDepartment)
+        {
+            OrganizationName = organizationName;
+            OrganizationDescription = organizationDescription;
+            OrganizationChiefExecutive = organizationChiefExecutive;
         }
 
-        private string? OrganizationName { get; set; }
-        private string? OrganizationDescription { get; set; }
+        public Organization(string v1, string v2, string v3, ChiefExecutive chiefExecutive, Department department1, Department department2)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+            this.v3 = v3;
+            this.chiefExecutive = chiefExecutive;
+            this.department1 = department1;
+            this.department2 = department2;
+        }
 
-        private string? OrganizationCEO { get; set; }
+        public string? OrganizationName { get; set; }
+        public string? OrganizationDescription { get; set; }
+
+        public ChiefExecutive OrganizationChiefExecutive { get; set; }
+
+        public Department? DevelopmentDepartment { get; set; }
+
+        public Department? HumanResourcesDepartment { get; set; }
+
 
         //private List<Department>? Departments { get; set; }
 

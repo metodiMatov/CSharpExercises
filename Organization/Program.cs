@@ -1,5 +1,5 @@
 ﻿using Organization;
+using static Organization.Workflow;
 
-var organization = new OrganizationClass("Test0", "Test2", "meto");
-organization.CreateEmloyees();
-organization.IntroduceEmployees();
+var workflow = new Workflow();
+workflow.SetWorkflow();

@@ -23,6 +23,11 @@ namespace Organization
             TeamName = teamName;
             EmploymentRecords = employmentRecords;
         }
+
+        public DepartmentManager()
+        {
+        }
+
         public float? Salary { get; set; }
         public float? HourlyRate { get; set; }
         public string? TeamName { get; set; }
@@ -32,6 +37,11 @@ namespace Organization
         public override void PresentYourself()
         {
             Console.WriteLine("Hello, my name is {0}. I am from {1}. I live in {2}. My profession is {3}", FirstName, Country, City, Profession);
+        }
+
+        public void HireEmployee(Approval approval)
+        {
+
         }
     }
 }

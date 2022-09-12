@@ -26,7 +26,8 @@ namespace Organization
         public string? Position { get; set; }
     }
 
-    abstract class Person
+
+    public abstract class Person
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
@@ -38,23 +39,30 @@ namespace Organization
         public string? Profession { get; set; }
         public List<EmploymentRecord>? EmploymentRecords { get; set; }
         public abstract void PresentYourself();
-        public void GetTotalWorkExperience()
+        public Dictionary<string, double>? GetTotalWorkExperience()
         {
             if (EmploymentRecords == null || EmploymentRecords.Count == 0)
             {
                 Console.WriteLine("The Employee doesn't have work experience!");
-                return;
+                return null;
             }
 
             double totalExperiance = 0;
+            
             foreach (var employmentRecord in EmploymentRecords)
             {
                 TimeSpan interval = employmentRecord.StartDate - employmentRecord.EndDate;
                 totalExperiance += interval.TotalMilliseconds;
             }
+
             var years = Math.Floor(totalExperiance / 12);
             var months = Math.Floor((totalExperiance / 12 - Math.Floor(totalExperiance / 12)) * 12);
-            Console.WriteLine("The Employee total experience is {0} years and {1}", years, months);
+            
+            var personTotalExperience = new Dictionary<string, double>();
+            personTotalExperience.Add("years", years);
+            personTotalExperience.Add("months", months);
+
+            return personTotalExperience;
         }
     }
 }

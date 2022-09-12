@@ -8,7 +8,7 @@ namespace Organization
 {
     internal class Employee : Person
     {
-        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, float salary, float hourlyRate, string teamName ,List<EmploymentRecord> employmentRecords)
+        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -18,14 +18,7 @@ namespace Organization
             Address = address;
             PersonalId = personalId;
             Profession = profession;
-            Salary = salary;
-            HourlyRate = hourlyRate;
-            TeamName = teamName;
-            EmploymentRecords = employmentRecords;
         }
-        protected internal float? Salary { get; set; }
-        protected internal float? HourlyRate { get; set; }
-        protected internal string? TeamName { get; set; }
 
         public override void PresentYourself()
         {

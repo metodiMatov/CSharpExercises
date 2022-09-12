@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Organization.Organization;
 
 namespace Organization
 {
-    internal class HumanResourcesManager : Person
+    
+    internal class HumanResourcesManager : Employee, IManagement
     {
-        public HumanResourcesManager(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, float salary, float hourlyRate, string teamName, List<EmploymentRecord> employmentRecords)
+        public Dictionary<string, Approval> _employeeApprovals = new Dictionary<string, Approval>();
+        public HumanResourcesManager(
+            string firstName,
+            string lastName, 
+            int age, 
+            string country, 
+            string city, 
+            string address, 
+            int personalId, 
+            string profession,
+            List<EmploymentRecord> employmentRecords)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -18,24 +30,20 @@ namespace Organization
             Address = address;
             PersonalId = personalId;
             Profession = profession;
-            Salary = salary;
-            HourlyRate = hourlyRate;
-            TeamName = teamName;
             EmploymentRecords = employmentRecords;
         }
-        public float? Salary { get; set; }
-        public float? HourlyRate { get; set; }
-        public string? TeamName { get; set; }
-
-        public Approval EmploeeApproval { get; set; }
-
+        public Dictionary<string, Approval>? EmployeeApprovals { get; set; }
 
         public override void PresentYourself()
         {
             Console.WriteLine("Hello, my name is {0}. I am from {1}. I live in {2}. My profession is {3}", FirstName, Country, City, Profession);
         }
+        public Approval ApproveEmployee(Approval approval)
+        {
+            
+        }
 
-        public void ApproveEmployee(Approval approval)
+        public void HireEmployee(Dictionary<string, Approval> _employeeApprovals)
         {
 
         }

@@ -9,42 +9,30 @@ namespace Organization
 {
     internal class Organization
     {
-        public List<Employee>? _employees = new List<Employee>();
-        private string v1;
-        private string v2;
-        private string v3;
-        private ChiefExecutive chiefExecutive;
-        private Department department1;
-        private Department department2;
+        public interface IManagement
+        {
+            public Approval ApproveEmployee(Approval approval);
+        }
 
-        public Organization(string organizationName, string organizationDescription, ChiefExecutive organizationChiefExecutive, Department developmentDepartment,Department HumanResourcesDepartment)
+        public List<Employee>? _employees = new List<Employee>();
+
+        public Organization(string organizationName, string organizationDescription, ChiefExecutive organizationChiefExecutive, Department developmentDepartment,Department humanResourcesDepartment)
         {
             OrganizationName = organizationName;
             OrganizationDescription = organizationDescription;
             OrganizationChiefExecutive = organizationChiefExecutive;
+            DevelopmentDepartment = developmentDepartment;
+            HumanResourcesDepartment = humanResourcesDepartment;
         }
 
-        public Organization(string v1, string v2, string v3, ChiefExecutive chiefExecutive, Department department1, Department department2)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.chiefExecutive = chiefExecutive;
-            this.department1 = department1;
-            this.department2 = department2;
-        }
-
-        public string? OrganizationName { get; set; }
-        public string? OrganizationDescription { get; set; }
+        public string OrganizationName { get; set; }
+        public string OrganizationDescription { get; set; }
 
         public ChiefExecutive OrganizationChiefExecutive { get; set; }
 
-        public Department? DevelopmentDepartment { get; set; }
+        public Department DevelopmentDepartment { get; set; }
 
-        public Department? HumanResourcesDepartment { get; set; }
-
-
-        //private List<Department>? Departments { get; set; }
+        public Department HumanResourcesDepartment { get; set; }
 
 
         public List<Employee> CreateEmloyees()

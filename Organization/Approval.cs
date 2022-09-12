@@ -9,8 +9,9 @@ namespace Organization
     public class Approval
     {
         public DateTime ApprovaleDate { get; set; }
-        public string? EmploeeName { get; set; }
+        public string? EmploeeId { get; set; }
         public bool IsApproved { get; set; }
         public string? Note { get; set; }
+        
     }
 }

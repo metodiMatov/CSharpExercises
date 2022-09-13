@@ -11,7 +11,37 @@ namespace Organization
     {
         public interface IManagement
         {
-            public Approval ApproveEmployee(Approval approval);
+            public Approval ApproveEmployee(Approval approval, Person person)
+            {
+                Console.Write("Enter a month: ");
+                int month = int.Parse(Console.ReadLine());
+                Console.Write("Enter a day: ");
+                int day = int.Parse(Console.ReadLine());
+                Console.Write("Enter a year: ");
+                int year = int.Parse(Console.ReadLine());
+
+                bool isApproved;
+                string isApprovedStr;
+                do
+                {
+                    Console.Write("Do you approve the Person(y/n): ");
+                    isApprovedStr = Console.ReadLine();
+                } while (isApprovedStr == "y" || isApprovedStr == "n");
+
+                if (isApprovedStr == "y")
+                {
+                    isApproved = true;
+                }
+                else
+                {
+                    isApproved = false;
+                }
+
+                Console.Write("Add your notes: ");
+                string note = Console.ReadLine();
+
+                return new Approval(new DateTime(year, month, day), person.PersonalId, isApproved, note);
+            }
         }
 
         public List<Employee>? _employees = new List<Employee>();
@@ -115,7 +145,7 @@ namespace Organization
                     employeeRecordIndex++;
                 }
 
-                _employees.Add(new Employee(firstName, lastName, age, country, city, address,id, profession, salary, hourlyRate, team, employeeRecords));
+                _employees.Add(new Person(firstName, lastName, age, country, city, address, id, profession, employeeRecords));
 
                 Console.WriteLine("Add more employees?(y/n)");
                 string answer = Console.ReadLine().ToLower();

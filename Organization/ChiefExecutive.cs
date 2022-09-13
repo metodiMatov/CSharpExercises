@@ -7,7 +7,7 @@ using static Organization.Organization;
 
 namespace Organization
 {
-    internal class ChiefExecutive : Person, IManagement
+    internal abstract class ChiefExecutive : Person, IManagement
     {
         public ChiefExecutive(
             string firstName, 
@@ -31,14 +31,6 @@ namespace Organization
             EmploymentRecords = employmentRecords;
         }
 
-        public Approval ApproveEmployee(Approval approval)
-        {
-            
-        }
-
-        public override void PresentYourself()
-        {
-            Console.WriteLine("Hello, my name is {0}. I am from {1}. I live in {2}. My profession is {3}", FirstName, Country, City, Profession);
-        }
+        public abstract Approval ApproveEmployee(Approval approval, Person person);
     }
 }

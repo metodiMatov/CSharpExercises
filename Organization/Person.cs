@@ -27,7 +27,7 @@ namespace Organization
     }
 
 
-    public abstract class Person
+    public class Person
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
@@ -38,7 +38,11 @@ namespace Organization
         public int PersonalId { get; set; }
         public string? Profession { get; set; }
         public List<EmploymentRecord>? EmploymentRecords { get; set; }
-        public abstract void PresentYourself();
+        public void PresentYourself()
+        {
+            Console.WriteLine("Hello, my name is {0}. I am from {1}. I live in {2}. My profession is {3}", FirstName, Country, City, Profession);
+        }
+
         public Dictionary<string, double>? GetTotalWorkExperience()
         {
             if (EmploymentRecords == null || EmploymentRecords.Count == 0)

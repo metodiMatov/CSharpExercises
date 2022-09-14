@@ -7,18 +7,9 @@ using static Organization.Organization;
 
 namespace Organization
 {
-    internal abstract class ChiefExecutive : Person, IManagement
+    public class ChiefExecutive : Person, IManagement
     {
-        public ChiefExecutive(
-            string firstName, 
-            string lastName, 
-            int age, 
-            string country, 
-            string city, 
-            string address, 
-            int personalId, 
-            string profession,
-            List<EmploymentRecord> employmentRecords)
+        public ChiefExecutive(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords) : base(firstName, lastName, age, country, city, address, personalId, profession, employmentRecords)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -30,7 +21,5 @@ namespace Organization
             Profession = profession;
             EmploymentRecords = employmentRecords;
         }
-
-        public abstract Approval ApproveEmployee(Approval approval, Person person);
     }
 }

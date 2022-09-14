@@ -8,7 +8,7 @@ using static Organization.Organization;
 namespace Organization
 {
     
-    internal abstract class HumanResourcesManager : Employee, IManagement
+    public class HumanResourcesManager : Person, IManagement
     {
         public Dictionary<string, Approval> _employeeApprovals = new Dictionary<string, Approval>();
         public HumanResourcesManager(
@@ -33,8 +33,6 @@ namespace Organization
             EmploymentRecords = employmentRecords;
         }
         public Dictionary<string, Approval>? EmployeeApprovals { get; set; }
-
-        public abstract Approval ApproveEmployee(Approval approval, Person person);
 
         public void HireEmployee(Dictionary<string, Approval> _employeeApprovals)
         {

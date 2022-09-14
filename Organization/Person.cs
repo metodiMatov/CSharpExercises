@@ -9,13 +9,10 @@ namespace Organization
     
     public record EmploymentRecord
     {
-        private DateTime dateTime1;
-        private DateTime dateTime2;
-
-        public EmploymentRecord(DateTime dateTime1, DateTime dateTime2, string? companyName, string? position)
+        public EmploymentRecord(DateTime startDate, DateTime endDate, string? companyName, string? position)
         {
-            this.dateTime1 = dateTime1;
-            this.dateTime2 = dateTime2;
+            StartDate = startDate;
+            EndDate = endDate;
             CompanyName = companyName;
             Position = position;
         }
@@ -29,6 +26,19 @@ namespace Organization
 
     public class Person
     {
+        public Person(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            Country = country;
+            City = city;
+            Address = address;
+            PersonalId = personalId;
+            Profession = profession;
+            EmploymentRecords = employmentRecords;
+        }
+
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public int Age { get; set; }

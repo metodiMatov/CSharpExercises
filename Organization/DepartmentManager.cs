@@ -7,16 +7,16 @@ using static Organization.Organization;
 
 namespace Organization
 {
-    internal abstract class DepartmentManager : Employee, IManagement
+    public class DepartmentManager : Person, IManagement
     {
         public DepartmentManager(
-            string firstName, 
-            string lastName, 
-            int age, 
-            string country, 
-            string city, 
-            string address, 
-            int personalId, 
+            string firstName,
+            string lastName,
+            int age,
+            string country,
+            string city,
+            string address,
+            int personalId,
             string profession,
             List<EmploymentRecord> employmentRecords)
         {
@@ -30,6 +30,5 @@ namespace Organization
             Profession = profession;
             EmploymentRecords = employmentRecords;
         }
-        public abstract Approval ApproveEmployee(Approval approval, Person person);
     }
 }

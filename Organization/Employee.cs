@@ -8,7 +8,7 @@ namespace Organization
 {
     internal class Employee : Person
     {
-        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession)
+        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -18,11 +18,7 @@ namespace Organization
             Address = address;
             PersonalId = personalId;
             Profession = profession;
-        }
-
-        public override void PresentYourself()
-        {
-            Console.WriteLine("Hello, my name is {0}. I am from {1}. I live in {2}. My profession is {3}", FirstName, Country, City, Profession);
+            EmploymentRecords = employmentRecords;
         }
     }
 }

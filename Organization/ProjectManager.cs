@@ -17,7 +17,7 @@ namespace Organization
             string address, 
             int personalId, 
             string profession, 
-            List<EmploymentRecord> employmentRecords)
+            List<EmploymentRecord> employmentRecords) : base(firstName, lastName, age, country, city, address, personalId, profession, employmentRecords)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -29,7 +29,7 @@ namespace Organization
             Profession = profession;
             EmploymentRecords = employmentRecords;
         }
-        public override void PresentYourself()
+        public virtual void PresentYourself()
         {
             Console.WriteLine("Hello, my name is {0}. I am from {1}. I live in {2}. My profession is {3}", FirstName, Country, City, Profession);
         }

@@ -14,7 +14,7 @@ namespace Organization
             Manager = manager;
         }
 
-        public string? DepartmentName { get; set }
+        public string? DepartmentName { get; set; }
         public DepartmentManager? Manager { get; set; }
 
     }

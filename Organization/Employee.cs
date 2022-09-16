@@ -8,7 +8,7 @@ namespace Organization
 {
     internal class Employee : Person
     {
-        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords)
+        public Employee(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords):base ( firstName,  lastName,  age,  country,  city,  address,  personalId,  profession, employmentRecords)   
         {
             FirstName = firstName;
             LastName = lastName;

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IqEGsvjB38/twFSRwfsXeplvbmRlgDa5KoJgpg8RBbswgDVfcvS5HGleyQnJ5Ok1WOX3+NV1DRfbSY6r/rA5Jg==",
+  "dgSpecHash": "b6W0wtXYpLWIdbO4Uu+FBoFEh9/uLcFCiBu295dFnIdVvXaU8naneu2rUAQI0TN07rB8O25ZA41JG9VYA0CEqA==",
   "success": true,
   "projectFilePath": "C:\\projects\\Training\\CSharpExercises\\Organization\\Organization.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\metodi.matov\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Organization.Organization;
-
-namespace Organization
+﻿namespace Organization.Employees
 {
-    public class ChiefExecutive : Person, IManagement
+    using Organization.Base;
+    using Organization.Interfaces;
+    using Organization.Utilities;
+
+    public class ChiefExecutive : Employee, IManagement
     {
-        public ChiefExecutive(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords) : base(firstName, lastName, age, country, city, address, personalId, profession, employmentRecords)
+        public ChiefExecutive(string firstName, string lastName, int age, string country, string city, string address, int personalId, string profession, List<EmploymentRecord> employmentRecords)
+            : base(firstName, lastName, age, country, city, address, personalId, profession, employmentRecords)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-            Country = country;
-            City = city;
-            Address = address;
-            PersonalId = personalId;
-            Profession = profession;
-            EmploymentRecords = employmentRecords;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+            this.Country = country;
+            this.City = city;
+            this.Address = address;
+            this.PersonalId = personalId;
+            this.Profession = profession;
+            this.EmploymentRecords = employmentRecords;
         }
+
         public Approval ApproveEmployee(Person person)
         {
             Console.Write("Enter a month: ");

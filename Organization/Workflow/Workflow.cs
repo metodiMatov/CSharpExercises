@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Organization;
-namespace Organization;
+﻿using Organization.Base;
+using Organization.Utilities;
+
+namespace Organization.Workflow;
 
 public class Workflow
 {
-    public List<Person>? _people = new List<Person>();
+    public List<Person>? people = new List<Person>();
+
     public void SetWorkflow()
     {
         Workflow workflow = this;
-        var people = workflow.CreatePeople(workflow.AddPerson());
+        var people = workflow.CreatePeople(this);
 
-        var organization = new Organization("Webspector", "QA company that ensure your Web project is in tune");
-        Console.WriteLine("Add Chief Executive:");
-        organization.AddChiefExecutive();
-        Console.WriteLine("Development Department and it's manager:");
-        organization.AddDevelopmentDepartment();
-        Console.WriteLine("Human Resource and it's manager:");
-        organization.AddHumanResourcesDepartment();
+        var organization = new Company("Webspector", "QA company that ensure your Web project is in tune");
 
         foreach (var person in people)
         {
@@ -29,10 +21,10 @@ public class Workflow
             var hrManager = organization.HumanResourcesDepartment.Manager;
 
             hrManager.ApproveEmployee(person);
-
         }
     }
-    public List<Person> CreatePeople(Person AddPerson)
+
+    public List<Person> CreatePeople(Workflow wrokFlow)
     {
         bool isCreatingPeople = true;
 
@@ -40,8 +32,8 @@ public class Workflow
         while (isCreatingPeople)
         {
 
-            var person = this.AddPerson();
-            _people.Add(person);
+            var person = wrokFlow.AddPerson();
+            people.Add(person);
 
             Console.Write("Add more employees?(y/n)");
             string answer = Console.ReadLine().ToLower();
@@ -55,8 +47,9 @@ public class Workflow
             }
         }
 
-        return _people;
+        return people;
     }
+
     public Person AddPerson()
     {
         Console.WriteLine("Creating Employee: ");
@@ -104,9 +97,9 @@ public class Workflow
 
             Console.Write("Latest position: ");
             string position = Console.ReadLine();
-            var personEmploymentRecord = new EmploymentRecord(new DateTime(startYear, startMonth, startDay), new DateTime(endYear, endMonth,  endDay), companyName, position);
+            var personEmploymentRecord = new EmploymentRecord(new DateTime(startYear, startMonth, startDay), new DateTime(endYear, endMonth, endDay), companyName, position);
             personEmploymentRecords.Add(personEmploymentRecord);
-            
+
             personRecordIndex++;
 
             Console.WriteLine("Create more Employment records for this Employee?(y/n)");

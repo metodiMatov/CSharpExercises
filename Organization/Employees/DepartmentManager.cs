@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Organization.Organization;
-
-namespace Organization
+﻿namespace Organization.Employees
 {
-    public class DepartmentManager : Person, IManagement
+    using Organization.Base;
+    using Organization.Interfaces;
+    using Organization.Utilities;
+
+    public class DepartmentManager : Employee, IManagement
     {
         public DepartmentManager(
             string firstName,
